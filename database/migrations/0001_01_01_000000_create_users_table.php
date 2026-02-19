@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('telephone_number', 10)->unique();
+            $table->enum('role', ['admin', 'agence', 'owner', 'client']);
             $table->timestamps();
         });
 
